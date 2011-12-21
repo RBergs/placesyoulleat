@@ -1,0 +1,15 @@
+<h2>Start finding your restaurants!</h2>
+
+<%= form_tag nil, :method => "get" do %>
+	<%= label_tag("Where would you like to eat?") %>
+	<%= text_field_tag("venue", params[:venue]) %>
+	<%= submit_tag("Search")%>
+<% end %>
+
+<% if @venues %>
+	<ul>
+	<% @venues["places"].each do |venue| %>
+	<li><%= link_to venue.name, venues_path(:venue_id => venue.id) %></li>
+	<% end %>
+	</ul>
+<% end %>

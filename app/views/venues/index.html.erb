@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Check out the deeeeeets</h2>
+
+<p>Name: <%= @venue.name %></p>
+<p>Address: <%= @venue.location.address %></p>
+<p>Cuisine: <%= @venue.categories[0]['shortName'] %></p>
+<p>Total Checkins: <%= @venue.stats["checkinsCount"] %></p>
